@@ -17,7 +17,11 @@ module.exports = new threecards;
 
 function threecards() {
     this.players = [];
+    this.discard = [];
+    this.stack = [];
     this.deck = new deck();
+
+    this.inProgress = false;
 }
 
 /**
@@ -33,15 +37,18 @@ threecards.prototype.init = function(nb_players) {
         this.players.push(new player());
     }
 
-    return true;
+    this.handler = handler;
+
+    this.inProgress = true;
+    return this.inProgress;
 };
 
 /**
  * Gestion des requêtes client.
- * @PARAM: requête
  * @PARAM: données de la requête
  */
-
-threecards.prototype.handler = function(req, data) {
-    return true;
+threecards.prototype.handler = function() {return 'err_not_initialized'};
+function handler(data) {
+    console.log('[ThreeCards] : Player ' + data.n + ' played.');
+    return 'next_player';
 };
