@@ -49,6 +49,6 @@ threecards.prototype.init = function(nb_players) {
  */
 threecards.prototype.handler = function() {return 'err_not_initialized'};
 function handler(data) {
-    console.log('[ThreeCards] : Player ' + data.n + ' played.');
+    console.log('[ThreeCards] : Player ' + data.player + ' played.');
     return 'next_player';
 };
