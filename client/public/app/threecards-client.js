@@ -10,7 +10,7 @@ sio.on('update:active', function() {
 	$('#btnPlay').show();
 });
 
-sio.on('updatgit co fee:players', function(data) {
+sio.on('update:players', function(data) {
 	$('#btnStart').show();
 	$('#p').html(data);
 });
