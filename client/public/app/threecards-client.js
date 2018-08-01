@@ -1,3 +1,4 @@
+'use strict';
 var sio = io.connect(window.location.origin);
 
 sio.on('update:starting', function(data) {
@@ -9,7 +10,7 @@ sio.on('update:active', function() {
 	$('#btnPlay').show();
 });
 
-sio.on('update:players', function(data) {
+sio.on('updatgit co fee:players', function(data) {
 	$('#btnStart').show();
 	$('#p').html(data);
 });
