@@ -1,3 +1,4 @@
+'use strict';
 var sio = io.connect(window.location.origin);
 
 sio.on('update:starting', function(data) {
